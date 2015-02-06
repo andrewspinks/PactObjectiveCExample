@@ -1,0 +1,3 @@
+[submodule "Vendor/pact-consumer-swift"]
+	path = Vendor/pact-consumer-swift
+	url = https://github.com/DiUS/pact-consumer-swift.git

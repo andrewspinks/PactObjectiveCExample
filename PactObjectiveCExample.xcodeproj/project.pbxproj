@@ -13,7 +13,9 @@
 		A150D8DD1A8490EC006E7C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A150D8DB1A8490EC006E7C2F /* Main.storyboard */; };
 		A150D8DF1A8490EC006E7C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A150D8DE1A8490EC006E7C2F /* Images.xcassets */; };
 		A150D8E21A8490EC006E7C2F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A150D8E01A8490EC006E7C2F /* LaunchScreen.xib */; };
-		A150D8EE1A8490EC006E7C2F /* PactObjectiveCExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A150D8ED1A8490EC006E7C2F /* PactObjectiveCExampleTests.m */; };
+		A150D9131A849742006E7C2F /* HelloClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A150D9121A849742006E7C2F /* HelloClient.m */; };
+		A150D9151A849758006E7C2F /* PactTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A150D9141A849758006E7C2F /* PactTest.m */; };
+		A150D9191A8498BB006E7C2F /* BlankClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150D9181A8498BB006E7C2F /* BlankClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +25,55 @@
 			proxyType = 1;
 			remoteGlobalIDString = A150D8CD1A8490EC006E7C2F;
 			remoteInfo = PactObjectiveCExample;
+		};
+		A150D8FC1A849550006E7C2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A150D8F71A849550006E7C2F /* PactConsumerSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A11F1A6B1A5C890D00DAB9CE;
+			remoteInfo = PactConsumerSwift;
+		};
+		A150D8FE1A849550006E7C2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A150D8F71A849550006E7C2F /* PactConsumerSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A11F1A761A5C890E00DAB9CE;
+			remoteInfo = PactConsumerSwiftTests;
+		};
+		A150D9071A84957F006E7C2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		A150D9091A84957F006E7C2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire OSX";
+		};
+		A150D90B1A84957F006E7C2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS Tests";
+		};
+		A150D90D1A84957F006E7C2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire OSX Tests";
+		};
+		A150D90F1A8495A0006E7C2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A150D8F71A849550006E7C2F /* PactConsumerSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A11F1A6A1A5C890D00DAB9CE;
+			remoteInfo = PactConsumerSwift;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -39,7 +90,12 @@
 		A150D8E11A8490EC006E7C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A150D8E71A8490EC006E7C2F /* PactObjectiveCExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PactObjectiveCExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A150D8EC1A8490EC006E7C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A150D8ED1A8490EC006E7C2F /* PactObjectiveCExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PactObjectiveCExampleTests.m; sourceTree = "<group>"; };
+		A150D8F71A849550006E7C2F /* PactConsumerSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PactConsumerSwift.xcodeproj; path = "Vendor/pact-consumer-swift/PactConsumerSwift.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Vendor/pact-consumer-swift/Carthage/Checkouts/Alamofire/Alamofire.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		A150D9111A849742006E7C2F /* HelloClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloClient.h; sourceTree = "<group>"; };
+		A150D9121A849742006E7C2F /* HelloClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloClient.m; sourceTree = "<group>"; };
+		A150D9141A849758006E7C2F /* PactTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PactTest.m; sourceTree = "<group>"; };
+		A150D9181A8498BB006E7C2F /* BlankClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +137,8 @@
 		A150D8D01A8490EC006E7C2F /* PactObjectiveCExample */ = {
 			isa = PBXGroup;
 			children = (
+				A150D9111A849742006E7C2F /* HelloClient.h */,
+				A150D9121A849742006E7C2F /* HelloClient.m */,
 				A150D8D51A8490EC006E7C2F /* AppDelegate.h */,
 				A150D8D61A8490EC006E7C2F /* AppDelegate.m */,
 				A150D8D81A8490EC006E7C2F /* ViewController.h */,
@@ -105,7 +163,10 @@
 		A150D8EA1A8490EC006E7C2F /* PactObjectiveCExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				A150D8ED1A8490EC006E7C2F /* PactObjectiveCExampleTests.m */,
+				A150D9181A8498BB006E7C2F /* BlankClass.swift */,
+				A150D9141A849758006E7C2F /* PactTest.m */,
+				A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */,
+				A150D8F71A849550006E7C2F /* PactConsumerSwift.xcodeproj */,
 				A150D8EB1A8490EC006E7C2F /* Supporting Files */,
 			);
 			path = PactObjectiveCExampleTests;
@@ -117,6 +178,26 @@
 				A150D8EC1A8490EC006E7C2F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A150D8F81A849550006E7C2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A150D8FD1A849550006E7C2F /* PactConsumerSwift.framework */,
+				A150D8FF1A849550006E7C2F /* PactConsumerSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A150D9011A84957F006E7C2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A150D9081A84957F006E7C2F /* Alamofire.framework */,
+				A150D90A1A84957F006E7C2F /* Alamofire.framework */,
+				A150D90C1A84957F006E7C2F /* Alamofire iOS Tests.xctest */,
+				A150D90E1A84957F006E7C2F /* Alamofire OSX Tests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +231,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A150D9101A8495A0006E7C2F /* PBXTargetDependency */,
 				A150D8E91A8490EC006E7C2F /* PBXTargetDependency */,
 			);
 			name = PactObjectiveCExampleTests;
@@ -186,6 +268,16 @@
 			mainGroup = A150D8C51A8490EC006E7C2F;
 			productRefGroup = A150D8CF1A8490EC006E7C2F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A150D9011A84957F006E7C2F /* Products */;
+					ProjectRef = A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = A150D8F81A849550006E7C2F /* Products */;
+					ProjectRef = A150D8F71A849550006E7C2F /* PactConsumerSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A150D8CD1A8490EC006E7C2F /* PactObjectiveCExample */,
@@ -193,6 +285,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A150D8FD1A849550006E7C2F /* PactConsumerSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PactConsumerSwift.framework;
+			remoteRef = A150D8FC1A849550006E7C2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A150D8FF1A849550006E7C2F /* PactConsumerSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PactConsumerSwiftTests.xctest;
+			remoteRef = A150D8FE1A849550006E7C2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A150D9081A84957F006E7C2F /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = A150D9071A84957F006E7C2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A150D90A1A84957F006E7C2F /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = A150D9091A84957F006E7C2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A150D90C1A84957F006E7C2F /* Alamofire iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire iOS Tests.xctest";
+			remoteRef = A150D90B1A84957F006E7C2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A150D90E1A84957F006E7C2F /* Alamofire OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire OSX Tests.xctest";
+			remoteRef = A150D90D1A84957F006E7C2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A150D8CC1A8490EC006E7C2F /* Resources */ = {
@@ -222,6 +359,7 @@
 				A150D8DA1A8490EC006E7C2F /* ViewController.m in Sources */,
 				A150D8D71A8490EC006E7C2F /* AppDelegate.m in Sources */,
 				A150D8D41A8490EC006E7C2F /* main.m in Sources */,
+				A150D9131A849742006E7C2F /* HelloClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +367,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A150D8EE1A8490EC006E7C2F /* PactObjectiveCExampleTests.m in Sources */,
+				A150D9151A849758006E7C2F /* PactTest.m in Sources */,
+				A150D9191A8498BB006E7C2F /* BlankClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +379,11 @@
 			isa = PBXTargetDependency;
 			target = A150D8CD1A8490EC006E7C2F /* PactObjectiveCExample */;
 			targetProxy = A150D8E81A8490EC006E7C2F /* PBXContainerItemProxy */;
+		};
+		A150D9101A8495A0006E7C2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PactConsumerSwift;
+			targetProxy = A150D90F1A8495A0006E7C2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

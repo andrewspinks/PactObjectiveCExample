@@ -2,12 +2,14 @@ language: objective-c
 osx_image: xcode611
 before_install:
 - scripts/import_keychain.sh
-- brew update
-- brew install carthage
-- carthage update
 - gem instal xcpretty
 - gem install pact-mock_service -v 0.2.4
+- git submodule update --init --recursive
 script:
 - set -o pipefail
-- xcodebuild -project PactSwiftExample.xcodeproj -scheme PactSwiftExample clean test -sdk iphonesimulator | xcpretty -c
+- xcodebuild -project PactObjectiveCExample.xcodeproj -scheme PactObjectiveCExample clean test
+  -sdk iphonesimulator | xcpretty -c
 after_script: scripts/delete_keychain.sh
+env:
+  global:
+    secure: l3C+jPG+XT2iBXiz0fjl7UqagwW1RwT5L0BOlGRJKkWaVOA0Z18bi32O7zTko4+P2ecvslla1m92gWvFJxhtLQmv3TcC70YT5koNFE7n0hSD1lGHq31GkMigGg3bFXAKiUC0Q1rSRVfkvMn6bFvtUKN42J1lvd7SE/ziXq2QU1g=
