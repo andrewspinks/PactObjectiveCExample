@@ -2,6 +2,7 @@
 set -o pipefail
 
 cd Vendor/pact-consumer-swift
+git checkout master
 git pull
 git submodule update --init --recursive
 cd -
