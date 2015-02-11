@@ -27,14 +27,14 @@ Do the same process for the following dependencies:
 
 Once you've added the dependent projects, you should see it in Xcode's project navigator, grouped with your tests.
 
-![](http://i.imgur.com/s6uBK1j.png)
+![](http://i.imgur.com/H0gyuXx.png)
 
 #### Link `PactConsumerSwift.framework`
 
  Link the `PactConsumerSwift.framework` during your test target's
 `Target Dependencies` build phase.
 
-![](http://i.imgur.com/Qrif7eo.png)
+![](http://i.imgur.com/IP0E9Tf.png)
 
 #### Setup your Test Target to run the pact server before the tests are run
   Modify the Test Target's scheme to add scripts to start and stop the pact server when tests are run.
@@ -49,7 +49,7 @@ Once you've added the dependent projects, you should see it in Xcode's project n
     ```
     - Make sure you select your project under `Provide the build settings from`, otherwise SRCROOT will not be set which the scripts depend on
 
-  ![](http://i.imgur.com/dJq7ytX.png)
+  ![](http://i.imgur.com/o4tXzGK.png)
   * Under Test, Post-actions add a Run Script Action to stop the pact service.
 
     ```bash
@@ -57,7 +57,7 @@ Once you've added the dependent projects, you should see it in Xcode's project n
     "$SRCROOT"/Vendor/pact-consumer-swift/scripts/stop_server.sh
     ```
     - Make sure you select your project under `Provide the build settings from`, otherwise SRCROOT will not be set which the scripts depend on
-  ![](http://i.imgur.com/IP0E9Tf.png)
+  ![](http://i.imgur.com/QjsEeF9.png)
 
 #### Objective-C Caveat: Your Test Target Must Include At Least One Swift File
 
