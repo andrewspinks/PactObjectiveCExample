@@ -6,7 +6,7 @@ See the Pact Swift library for more details. [PactConsumerSwift library][pact-co
 ## Installation with Git Submodules
 
 ### Install the [pact-mock_service](https://github.com/bethesque/pact-mock_service)
-  `gem install pact-mock_service -v 0.2.4`
+  `gem install pact-mock_service -v 0.3.0`
 
 ```sh
 mkdir Vendor # you can keep your submodules in their own directory
@@ -23,6 +23,7 @@ Next, select `PactConsumerSwift.xcodeproj`, from `Vendor/pact-consumer-swift`
 
 Do the same process for the following dependencies:
 * `Alamofire.xcodeproj`, from `Vendor/pact-consumer-swift/Carthage/Checkout/Alamofire/`
+* `BrightFutures.xcodeproj`, from `Vendor/pact-consumer-swift/Carthage/Checkout/BrightFutures/`
 
 Once you've added the dependent projects, you should see it in Xcode's project navigator, grouped with your tests.
 
@@ -31,7 +32,7 @@ Once you've added the dependent projects, you should see it in Xcode's project n
 #### Link `PactConsumerSwift.framework`
 
  Link the `PactConsumerSwift.framework` during your test target's
-`Link Binary with Libraries` build phase.
+`Target Dependencies` build phase.
 
 ![](http://i.imgur.com/Qrif7eo.png)
 
@@ -48,7 +49,7 @@ Once you've added the dependent projects, you should see it in Xcode's project n
     ```
     - Make sure you select your project under `Provide the build settings from`, otherwise SRCROOT will not be set which the scripts depend on
 
-  ![](http://i.imgur.com/o4tXzGK.png)
+  ![](http://i.imgur.com/dJq7ytX.png)
   * Under Test, Post-actions add a Run Script Action to stop the pact service.
 
     ```bash
@@ -56,7 +57,7 @@ Once you've added the dependent projects, you should see it in Xcode's project n
     "$SRCROOT"/Vendor/pact-consumer-swift/scripts/stop_server.sh
     ```
     - Make sure you select your project under `Provide the build settings from`, otherwise SRCROOT will not be set which the scripts depend on
-  ![](http://i.imgur.com/QjsEeF9.png)
+  ![](http://i.imgur.com/IP0E9Tf.png)
 
 #### Objective-C Caveat: Your Test Target Must Include At Least One Swift File
 
