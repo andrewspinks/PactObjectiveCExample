@@ -75,6 +75,20 @@
 			remoteGlobalIDString = A11F1A6A1A5C890D00DAB9CE;
 			remoteInfo = PactConsumerSwift;
 		};
+		A168784E1A8B2CE2009B4085 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A16878491A8B2CE2009B4085 /* BrightFutures.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9DF0815194470060083F7F2;
+			remoteInfo = BrightFutures;
+		};
+		A16878501A8B2CE2009B4085 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A16878491A8B2CE2009B4085 /* BrightFutures.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9DF0820194470060083F7F2;
+			remoteInfo = BrightFuturesTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +110,7 @@
 		A150D9121A849742006E7C2F /* HelloClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloClient.m; sourceTree = "<group>"; };
 		A150D9141A849758006E7C2F /* PactTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PactTest.m; sourceTree = "<group>"; };
 		A150D9181A8498BB006E7C2F /* BlankClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankClass.swift; sourceTree = "<group>"; };
+		A16878491A8B2CE2009B4085 /* BrightFutures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrightFutures.xcodeproj; path = "Vendor/pact-consumer-swift/Carthage/Checkouts/BrightFutures/BrightFutures.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +180,7 @@
 			children = (
 				A150D9181A8498BB006E7C2F /* BlankClass.swift */,
 				A150D9141A849758006E7C2F /* PactTest.m */,
+				A16878491A8B2CE2009B4085 /* BrightFutures.xcodeproj */,
 				A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */,
 				A150D8F71A849550006E7C2F /* PactConsumerSwift.xcodeproj */,
 				A150D8EB1A8490EC006E7C2F /* Supporting Files */,
@@ -196,6 +212,15 @@
 				A150D90A1A84957F006E7C2F /* Alamofire.framework */,
 				A150D90C1A84957F006E7C2F /* Alamofire iOS Tests.xctest */,
 				A150D90E1A84957F006E7C2F /* Alamofire OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A168784A1A8B2CE2009B4085 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A168784F1A8B2CE2009B4085 /* BrightFutures.framework */,
+				A16878511A8B2CE2009B4085 /* BrightFuturesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,6 +299,10 @@
 					ProjectRef = A150D9001A84957F006E7C2F /* Alamofire.xcodeproj */;
 				},
 				{
+					ProductGroup = A168784A1A8B2CE2009B4085 /* Products */;
+					ProjectRef = A16878491A8B2CE2009B4085 /* BrightFutures.xcodeproj */;
+				},
+				{
 					ProductGroup = A150D8F81A849550006E7C2F /* Products */;
 					ProjectRef = A150D8F71A849550006E7C2F /* PactConsumerSwift.xcodeproj */;
 				},
@@ -327,6 +356,20 @@
 			fileType = wrapper.cfbundle;
 			path = "Alamofire OSX Tests.xctest";
 			remoteRef = A150D90D1A84957F006E7C2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A168784F1A8B2CE2009B4085 /* BrightFutures.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BrightFutures.framework;
+			remoteRef = A168784E1A8B2CE2009B4085 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A16878511A8B2CE2009B4085 /* BrightFuturesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BrightFuturesTests.xctest;
+			remoteRef = A16878501A8B2CE2009B4085 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -558,6 +601,7 @@
 				A150D8F31A8490EC006E7C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A150D8F41A8490EC006E7C2F /* Build configuration list for PBXNativeTarget "PactObjectiveCExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +610,7 @@
 				A150D8F61A8490EC006E7C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

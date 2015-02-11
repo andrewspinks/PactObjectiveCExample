@@ -35,7 +35,7 @@
                      XCTAssertEqualObjects(requestReply, @"Hello");
                      complete();
                    }
-                   result:^(PactVerificationResult result) {
+                   verification:^(PactVerificationResult result) {
                      XCTAssert(result == PactVerificationResultPassed);
                      [exp fulfill];
                    }];
@@ -56,7 +56,7 @@
                       XCTAssertEqualObjects(response, @"{\"friends\":[\"Sue\"]}");
                       complete();
                     }
-                    result:^(PactVerificationResult result) {
+                    verification:^(PactVerificationResult result) {
                       XCTAssert(result == PactVerificationResultPassed);
                       [exp fulfill];
                     }];
@@ -83,7 +83,7 @@
                                         }];
                       complete();
                     }
-                    result:^(PactVerificationResult result) {
+                    verification:^(PactVerificationResult result) {
                       XCTAssert(result == PactVerificationResultPassed);
                       [exp fulfill];
                     }];
@@ -109,7 +109,7 @@
                                         }];
                       complete();
                     }
-                    result:^(PactVerificationResult result) {
+                    verification:^(PactVerificationResult result) {
                       XCTAssert(result == PactVerificationResultPassed);
                       [exp fulfill];
                     }];
