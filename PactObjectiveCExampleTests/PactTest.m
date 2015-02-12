@@ -30,15 +30,16 @@
                  withRequest:1 path:@"/sayHello" query:nil headers:nil body: nil]
                  willRespondWith:200 headers:@{@"Content-Type": @"application/json"} body: @"Hello" ];
   
-  [self.mockService run:^(CompleteBlock complete) {
-                     NSString *requestReply = [self.helloClient sayHello];
-                     XCTAssertEqualObjects(requestReply, @"Hello");
-                     complete();
-                   }
-                   verification:^(PactVerificationResult result) {
-                     XCTAssert(result == PactVerificationResultPassed);
-                     [exp fulfill];
-                   }];
+  [[self.mockService run:^(CompleteBlock testComplete) {
+      NSString *requestReply = [self.helloClient sayHello];
+      XCTAssertEqualObjects(requestReply, @"Hello");
+      testComplete();
+    }
+  ] onComplete:^(PactVerificationResult result) {
+     XCTAssert(result == PactVerificationResultPassed);
+     [exp fulfill];
+    }
+  ];
   
   [self waitForExpectationsWithTimeout:5 handler:nil];
 }
@@ -51,42 +52,16 @@
     withRequest:1 path:@"/friends" query: @{ @"age" : @"30", @"child" : @"Mary" } headers:nil body: nil]
    willRespondWith:200 headers:@{@"Content-Type": @"application/json"} body: @{ @"friends": @[ @"Sue" ] } ];
   
-  [self.mockService run:^(CompleteBlock complete) {
-                      NSString *response = [self.helloClient findFriendsByAgeAndChild];
-                      XCTAssertEqualObjects(response, @"{\"friends\":[\"Sue\"]}");
-                      complete();
-                    }
-                    verification:^(PactVerificationResult result) {
-                      XCTAssert(result == PactVerificationResultPassed);
-                      [exp fulfill];
-                    }];
-  
-  [self waitForExpectationsWithTimeout:5 handler:nil];
-}
-
-
-- (void)testPutOperation {
-  typedef void (^CompleteBlock)();
-  XCTestExpectation *exp = [self expectationWithDescription:@"Respons with successful unfriending"];
-  
-  [[[[self.mockService
-     given: @"I am friends with Fred" ]
-     uponReceiving:@"a request to unfriend"]
-     withRequest:PactHTTPMethodPut path:@"/unfriendMe" query: nil headers:nil body: nil]
-     willRespondWith:200 headers:@{@"Content-Type": @"application/json"} body: @{ @"reply": @"Bye" } ];
-  
-  [self.mockService run:^(CompleteBlock complete) {
-                      [self.helloClient unfriend:^(NSString *response) {
-                                          XCTAssertEqualObjects(response, @"{\"reply\":\"Bye\"}");
-                                        } failure:^(NSInteger errorCode) {
-                                          XCTAssertFalse(true);
-                                        }];
-                      complete();
-                    }
-                    verification:^(PactVerificationResult result) {
-                      XCTAssert(result == PactVerificationResultPassed);
-                      [exp fulfill];
-                    }];
+  [[self.mockService run:^(CompleteBlock testComplete) {
+      NSString *response = [self.helloClient findFriendsByAgeAndChild];
+      XCTAssertEqualObjects(response, @"{\"friends\":[\"Sue\"]}");
+      testComplete();
+    }
+  ] onComplete:^(PactVerificationResult result) {
+      XCTAssert(result == PactVerificationResultPassed);
+      [exp fulfill];
+    }
+  ];
   
   [self waitForExpectationsWithTimeout:5 handler:nil];
 }
@@ -101,18 +76,19 @@
     withRequest:PactHTTPMethodPut path:@"/unfriendMe" query: nil headers:nil body: nil]
    willRespondWith:404 headers:nil body: nil ];
   
-  [self.mockService run:^(CompleteBlock complete) {
-                      [self.helloClient unfriend:^(NSString *response) {
-                                          XCTAssertFalse(true);
-                                        } failure:^(NSInteger errorCode) {
-                                          XCTAssertEqual(errorCode, 404);
-                                        }];
-                      complete();
-                    }
-                    verification:^(PactVerificationResult result) {
-                      XCTAssert(result == PactVerificationResultPassed);
-                      [exp fulfill];
-                    }];
+  [[self.mockService run:^(CompleteBlock testComplete) {
+      [self.helloClient unfriend:^(NSString *response) {
+                          XCTAssertFalse(true);
+                        } failure:^(NSInteger errorCode) {
+                          XCTAssertEqual(errorCode, 404);
+                        }];
+      testComplete();
+    }
+  ] onComplete:^(PactVerificationResult result) {
+      XCTAssert(result == PactVerificationResultPassed);
+      [exp fulfill];
+    }
+  ];
   
   [self waitForExpectationsWithTimeout:5 handler:nil];
 }
