@@ -1,10 +1,4 @@
 #!/bin/bash
 set -o pipefail
 
-cd Vendor/pact-consumer-swift
-git checkout master
-git pull
-git submodule update --init --recursive
-cd -
-
-xcodebuild -project PactObjectiveCExample.xcodeproj -scheme PactObjectiveCExample clean test -sdk iphonesimulator | xcpretty -c
+xcodebuild -workspace PactObjectiveCExample.xcworkspace -scheme PactObjectiveCExample clean test -sdk iphonesimulator | xcpretty -c
