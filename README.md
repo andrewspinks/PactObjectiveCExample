@@ -3,38 +3,17 @@
 
 See the Pact Swift library for more details. [PactConsumerSwift library][pact-consumer-swift]
 
-## Installation with Git Submodules
+## Installation with CocoaPods
 
 ### Install the [pact-mock_service](https://github.com/bethesque/pact-mock_service)
-  `gem install pact-mock_service -v 0.3.0`
+  `gem install pact-mock_service -v 0.5.5`
 
-```sh
-mkdir Vendor # you can keep your submodules in their own directory
-git submodule add git@github.com:DiUS/pact-consumer-swift.git Vendor/pact-consumer-swift
-git submodule update --init --recursive
+Add to your Test target in your Podfile
 ```
-
-#### Add `PactConsumerSwift.xcodeproj` and dependencies to your test target
-
-Right-click on the group containing your application's tests and
-select `Add Files To YourApp...`.
-
-Next, select `PactConsumerSwift.xcodeproj`, from `Vendor/pact-consumer-swift`
-
-Do the same process for the following dependencies:
-* `Alamofire.xcodeproj`, from `Vendor/pact-consumer-swift/Carthage/Checkout/Alamofire/`
-* `BrightFutures.xcodeproj`, from `Vendor/pact-consumer-swift/Carthage/Checkout/BrightFutures/`
-
-Once you've added the dependent projects, you should see it in Xcode's project navigator, grouped with your tests.
-
-![](http://i.imgur.com/H0gyuXx.png)
-
-#### Link `PactConsumerSwift.framework`
-
- Link the `PactConsumerSwift.framework` during your test target's
-`Target Dependencies` build phase.
-
-![](http://i.imgur.com/IP0E9Tf.png)
+target 'MyProjectTests' do
+  pod 'PactConsumerSwift'
+end
+```
 
 #### Setup your Test Target to run the pact server before the tests are run
   Modify the Test Target's scheme to add scripts to start and stop the pact server when tests are run.
@@ -45,7 +24,7 @@ Once you've added the dependent projects, you should see it in Xcode's project n
 
     ```bash
     PATH=/path/to/pact-mock-service/binary:$PATH
-    "$SRCROOT"/Vendor/pact-consumer-swift/scripts/start_server.sh
+    "$SRCROOT"/Pods/PactConsumerSwift/scripts/start_server.sh
     ```
     - Make sure you select your project under `Provide the build settings from`, otherwise SRCROOT will not be set which the scripts depend on
 
@@ -54,7 +33,7 @@ Once you've added the dependent projects, you should see it in Xcode's project n
 
     ```bash
     PATH=/path/to/pact-mock-service/binary:$PATH
-    "$SRCROOT"/Vendor/pact-consumer-swift/scripts/stop_server.sh
+    "$SRCROOT"/Pods/PactConsumerSwift/scripts/stop_server.sh
     ```
     - Make sure you select your project under `Provide the build settings from`, otherwise SRCROOT will not be set which the scripts depend on
   ![](http://i.imgur.com/QjsEeF9.png)
