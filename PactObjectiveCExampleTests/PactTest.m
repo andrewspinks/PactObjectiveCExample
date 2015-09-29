@@ -30,7 +30,7 @@
   typedef void (^CompleteBlock)();
   [[[self.mockService uponReceiving:@"a request for hello"]
                       withRequestHTTPMethod:PactHTTPMethodGET path:@"/sayHello" query:nil headers:nil body: nil]
-                      willRespondWithHTTPStatus:200 headers:@{@"Content-Type": @"application/json"} body: @"Hello" ];
+                      willRespondWithHTTPStatus:200 headers:@{@"Content-Type": @"application/json"} body: [Matcher somethingLike:@"Hello"] ];
   
   [self.mockService run:^(CompleteBlock testComplete) {
       NSString *requestReply = [self.helloClient sayHello];
@@ -47,11 +47,11 @@
   
   [[[self.mockService uponReceiving:@"a request friends"]
                       withRequestHTTPMethod:PactHTTPMethodGET path:@"/friends" query: @{ @"age" : @"30", @"child" : @"Mary" } headers:nil body: nil]
-                      willRespondWithHTTPStatus:200 headers:@{@"Content-Type": @"application/json"} body: @{ @"friends": @[ @"Sue" ] } ];
+   willRespondWithHTTPStatus:200 headers:@{@"Content-Type": @"application/json"} body: @{ @"friends": @[ @{ @"id": [Matcher termWithMatcher:@"[0-9]+" generate:@"1234"] } ] } ];
   
   [self.mockService run:^(CompleteBlock testComplete) {
       NSString *response = [self.helloClient findFriendsByAgeAndChild];
-      XCTAssertEqualObjects(response, @"{\"friends\":[\"Sue\"]}");
+      XCTAssertEqualObjects(response, @"{\"friends\":[{\"id\":\"1234\"}]}");
       testComplete();
     }
   ];
