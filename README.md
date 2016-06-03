@@ -6,7 +6,7 @@ See the Pact Swift library for more details. [PactConsumerSwift library][pact-co
 ## Installation with CocoaPods
 
 ### Install the [pact-mock_service](https://github.com/bethesque/pact-mock_service)
-  `gem install pact-mock_service -v 0.5.5`
+  `gem install pact-mock_service -v 0.9.0`
 
 Add to your Test target in your Podfile
 ```
