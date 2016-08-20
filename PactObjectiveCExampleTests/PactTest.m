@@ -14,11 +14,7 @@
 
 - (void)setUp {
   [super setUp];
-  XCTestExpectation *exp = [self expectationWithDescription:@"Pacts all verified"];
-  self.mockService = [[MockService alloc] initWithProvider:@"Provider" consumer:@"consumer" done:^(PactVerificationResult result) {
-    XCTAssert(result == PactVerificationResultPassed);
-    [exp fulfill];
-  }];
+  self.mockService = [[MockService alloc] initWithProvider:@"Provider" consumer:@"consumer"];
   self.helloClient = [[HelloClient alloc] initWithBaseUrl:self.mockService.baseUrl];
 }
 
@@ -28,6 +24,7 @@
 
 - (void)testPact {
   typedef void (^CompleteBlock)();
+
   [[[self.mockService uponReceiving:@"a request for hello"]
                       withRequestHTTPMethod:PactHTTPMethodGET path:@"/sayHello" query:nil headers:nil body: nil]
                       willRespondWithHTTPStatus:200 headers:@{@"Content-Type": @"application/json"} body: [Matcher somethingLike:@"Hello"] ];
@@ -38,8 +35,6 @@
       testComplete();
     }
   ];
-  
-  [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 - (void)testWithQueryParams {
@@ -55,8 +50,6 @@
       testComplete();
     }
   ];
-  
-  [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 @end
