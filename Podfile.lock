@@ -1,11 +1,11 @@
 PODS:
-  - Alamofire (3.4.1)
+  - Alamofire (3.5.0)
   - BrightFutures (4.1.1):
     - Result (~> 2.0)
   - Nimble (4.1.0)
-  - PactConsumerSwift (0.3.0):
-    - Alamofire (~> 3.4)
-    - BrightFutures (~> 4.0)
+  - PactConsumerSwift (0.3.1):
+    - Alamofire (~> 3.5)
+    - BrightFutures (~> 4.1)
     - Nimble (~> 4.1)
   - Result (2.1.3)
 
@@ -19,16 +19,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PactConsumerSwift:
-    :commit: e22e53b5a192fccba383e35047a4899dd9b0a1c1
+    :commit: dc75a71afaadbc20a654bb86a77e1fc851d79560
     :git: https://github.com/DiUS/pact-consumer-swift
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
   BrightFutures: 2b9f317ca249be86025f5747a76e72c9a0b4f4d2
   Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
-  PactConsumerSwift: 7a3acb765d0a4a874c99226501506d855cf40290
+  PactConsumerSwift: 86bb90dc882cf5b53eb1e761f5a4ecec5c9702a3
   Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
 
 PODFILE CHECKSUM: b2d1ff7b566aa7bf3e7ea341a7bc956cb200b812
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2
