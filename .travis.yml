@@ -4,6 +4,7 @@ before_install:
 - scripts/import_keychain.sh
 - gem instal xcpretty
 - gem install pact-mock_service -v 0.9.0
+- gem update cocoapods
 - pod update
 script: scripts/build.sh
 env:
