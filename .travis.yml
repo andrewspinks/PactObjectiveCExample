@@ -1,14 +1,12 @@
 language: objective-c
 osx_image: xcode9.4
-env:
-  global:
-    - PACT_STANDALONE_VERSION="1.61.1"
+os: osx
 before_install:
   - scripts/import_keychain.sh
   - gem instal xcpretty
   - gem update cocoapods
-  - curl -LO "https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.61.1/pact-1.61.1-osx.tar.gz"
-  - tar xzf "pact-1.61.1-linux-x86_64.tar.gz"
+  - curl -LO https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.61.1/pact-1.61.1-osx.tar.gz
+  - tar xzf pact-1.61.1-osx.tar.gz
   - mkdir -p "${TRAVIS_BUILD_DIR}/tmp"
   - $TRAVIS_BUILD_DIR/pact/bin/pact-mock-service start --pact-specification-version 2.0.0 --log "${TRAVIS_BUILD_DIR}/tmp/pact.log" --pact-dir "${TRAVIS_BUILD_DIR}/tmp/pacts" -p 1234
   - pod update
