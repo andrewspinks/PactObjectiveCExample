@@ -12,6 +12,13 @@ PODS:
 DEPENDENCIES:
   - PactConsumerSwift (from `https://github.com/DiUS/pact-consumer-swift`, branch `master`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - BrightFutures
+    - Nimble
+    - Result
+
 EXTERNAL SOURCES:
   PactConsumerSwift:
     :branch: master
@@ -31,4 +38,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 669af045626202d44697446fc119cbf4a4b95807
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.5.3

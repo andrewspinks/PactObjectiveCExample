@@ -5,8 +5,16 @@ See the Pact Swift library for more details. [PactConsumerSwift library][pact-co
 
 ## Installation with CocoaPods
 
-### Install the [pact-mock_service](https://github.com/bethesque/pact-mock_service)
-  `gem install pact-mock_service -v 0.9.0`
+### Install the [pact-ruby-standalone](https://github.com/pact-foundation/pact-ruby-standalone/releases)
+
+See releases for installation:
+
+But it generally goes something like this (on macOS, pact-ruby-standalone version 1.61.1):
+
+```
+curl -LO https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.61.1/pact-1.61.1-osx.tar.gz
+tar xzf pact-1.61.1-osx.tar.gz
+```
 
 Add to your Test target in your Podfile
 ```
@@ -23,7 +31,7 @@ end
     _NB: the PATH variable should be set to the location of the pact-mock-service binary - you can find the path using `which pact-mock-service`_
 
     ```bash
-    PATH=/path/to/pact-mock-service/binary:$PATH
+    PATH=/path/to/installed-pact-ruby-standalone/pact/bin:$PATH
     "$SRCROOT"/Pods/PactConsumerSwift/scripts/start_server.sh
     ```
     - Make sure you select your project under `Provide the build settings from`, otherwise SRCROOT will not be set which the scripts depend on
