@@ -4,18 +4,18 @@ env:
   global:
     - PACT_STANDALONE_VERSION="1.61.1"
 before_install:
-- scripts/import_keychain.sh
-- gem instal xcpretty
-- gem update cocoapods
-- curl -LO "https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v${PACT_STANDALONE_VERSION}/pact-${PACT_STANDALONE_VERSION}-osx.tar.gz"
-- tar xzf "pact-${PACT_STANDALONE_VERSION}-linux-x86_64.tar.gz"
-- mkdir -p "${TRAVIS_BUILD_DIR}/tmp"
-- $TRAVIS_BUILD_DIR/pact/bin/pact-mock-service start --pact-specification-version 2.0.0 --log "${TRAVIS_BUILD_DIR}/tmp/pact.log" --pact-dir "${TRAVIS_BUILD_DIR}/tmp/pacts" -p 1234
-- pod update
+  - scripts/import_keychain.sh
+  - gem instal xcpretty
+  - gem update cocoapods
+  - curl -LO "https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.61.1/pact-1.61.1-osx.tar.gz"
+  - tar xzf "pact-1.61.1-linux-x86_64.tar.gz"
+  - mkdir -p "${TRAVIS_BUILD_DIR}/tmp"
+  - $TRAVIS_BUILD_DIR/pact/bin/pact-mock-service start --pact-specification-version 2.0.0 --log "${TRAVIS_BUILD_DIR}/tmp/pact.log" --pact-dir "${TRAVIS_BUILD_DIR}/tmp/pacts" -p 1234
+  - pod update
 script: 
-- scan
+  - scan
 after_success:
-- $TRAVIS_BUILD_DIR/pact/bin/pact-mock-service stop
+  - $TRAVIS_BUILD_DIR/pact/bin/pact-mock-service stop
 env:
   global:
     secure: l3C+jPG+XT2iBXiz0fjl7UqagwW1RwT5L0BOlGRJKkWaVOA0Z18bi32O7zTko4+P2ecvslla1m92gWvFJxhtLQmv3TcC70YT5koNFE7n0hSD1lGHq31GkMigGg3bFXAKiUC0Q1rSRVfkvMn6bFvtUKN42J1lvd7SE/ziXq2QU1g=
