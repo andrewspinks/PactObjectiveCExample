@@ -7,13 +7,15 @@ before_install:
   - gem update cocoapods
   - brew tap pact-foundation/pact-ruby-standalone
   - brew install pact-ruby-standalone
-  - brew cask install fastlane
+  - brew install xctool
+  # - brew cask install fastlane
   - mkdir -p "${TRAVIS_BUILD_DIR}/tmp"
   - pact-mock-service start --pact-specification-version 2.0.0 --log "${TRAVIS_BUILD_DIR}/tmp/pact.log" --pact-dir "${TRAVIS_BUILD_DIR}/tmp/pacts" -p 1234
   - pod update
 script: 
   #- xcodebuild -workspace ./PactObjectiveCExample.xcworkspace -scheme PactObjectiveCExample -destination 'OS=12.2,name=iPhone Xs' -enableCodeCoverage NO clean build test
-  - scan
+  # - scan
+  - xctool test -workspace PactObjectiveCExample.xcworkspace -scheme PactObjectiveCExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 after_script:
   - pact-mock-service stop
   - scripts/delete_keychain.sh
