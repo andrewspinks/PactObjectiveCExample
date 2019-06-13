@@ -15,7 +15,7 @@ before_install:
 script: 
   #- xcodebuild -workspace ./PactObjectiveCExample.xcworkspace -scheme PactObjectiveCExample -destination 'OS=12.2,name=iPhone Xs' -enableCodeCoverage NO clean build test
   # - scan
-  - xctool test -workspace PactObjectiveCExample.xcworkspace -scheme PactObjectiveCExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool -workspace PactObjectiveCExample.xcworkspace -scheme PactObjectiveCExample run-tests
 after_script:
   - pact-mock-service stop
   - scripts/delete_keychain.sh
