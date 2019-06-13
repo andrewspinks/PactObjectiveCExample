@@ -1,19 +1,22 @@
 language: objective-c
-osx_image: xcode9.4
+osx_image: xcode10.2
 os: osx
 before_install:
   - scripts/import_keychain.sh
   - gem instal xcpretty
   - gem update cocoapods
-  - curl -LO https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.61.1/pact-1.61.1-osx.tar.gz
-  - tar xzf pact-1.61.1-osx.tar.gz
+  - brew tap pact-foundation/pact-ruby-standalone
+  - brew install pact-ruby-standalone
+  - brew cask install fastlane
   - mkdir -p "${TRAVIS_BUILD_DIR}/tmp"
-  - $TRAVIS_BUILD_DIR/pact/bin/pact-mock-service start --pact-specification-version 2.0.0 --log "${TRAVIS_BUILD_DIR}/tmp/pact.log" --pact-dir "${TRAVIS_BUILD_DIR}/tmp/pacts" -p 1234
+  - pact-mock-service start --pact-specification-version 2.0.0 --log "${TRAVIS_BUILD_DIR}/tmp/pact.log" --pact-dir "${TRAVIS_BUILD_DIR}/tmp/pacts" -p 1234
   - pod update
 script: 
+  #- xcodebuild -workspace ./PactObjectiveCExample.xcworkspace -scheme PactObjectiveCExample -destination 'OS=12.2,name=iPhone Xs' -enableCodeCoverage NO clean build test
   - scan
-after_success:
-  - $TRAVIS_BUILD_DIR/pact/bin/pact-mock-service stop
+after_script:
+  - pact-mock-service stop
+  - scripts/delete_keychain.sh
 env:
   global:
     secure: l3C+jPG+XT2iBXiz0fjl7UqagwW1RwT5L0BOlGRJKkWaVOA0Z18bi32O7zTko4+P2ecvslla1m92gWvFJxhtLQmv3TcC70YT5koNFE7n0hSD1lGHq31GkMigGg3bFXAKiUC0Q1rSRVfkvMn6bFvtUKN42J1lvd7SE/ziXq2QU1g=

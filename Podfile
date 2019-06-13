@@ -3,5 +3,5 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'PactObjectiveCExampleTests' do
-  pod 'PactConsumerSwift', '~> 0.5'
+  pod 'PactConsumerSwift', :git => 'https://github.com/DiUS/pact-consumer-swift', :branch => 'master'
 end
