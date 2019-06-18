@@ -2,11 +2,8 @@ language: objective-c
 osx_image: xcode10.2
 os: osx
 before_install:
-  - scripts/import_keychain.sh
   - scripts/install_deps.sh
 script: scripts/build.sh
-after_script:
-  - scripts/delete_keychain.sh
 env:
   global:
     secure: l3C+jPG+XT2iBXiz0fjl7UqagwW1RwT5L0BOlGRJKkWaVOA0Z18bi32O7zTko4+P2ecvslla1m92gWvFJxhtLQmv3TcC70YT5koNFE7n0hSD1lGHq31GkMigGg3bFXAKiUC0Q1rSRVfkvMn6bFvtUKN42J1lvd7SE/ziXq2QU1g=
