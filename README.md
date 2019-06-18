@@ -7,15 +7,24 @@ See the Pact Swift library for more details. [PactConsumerSwift library][pact-co
 
 ### Install the [pact-ruby-standalone](https://github.com/pact-foundation/pact-ruby-standalone/releases)
 
-See releases for installation:
+#### Homebrew
+  brew tap pact-foundation/pact-ruby-standalone
+  brew install pact-ruby-standalone
 
-But it generally goes something like this (on macOS, pact-ruby-standalone version 1.61.1):
+ This will install the following tools:
 
-```
-curl -LO https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.61.1/pact-1.61.1-osx.tar.gz
-tar xzf pact-1.61.1-osx.tar.gz
-```
+  pact
+  pact-broker
+  pact-message
+  pact-mock-service
+  pact-provider-verifier
+  pact-publish
+  pact-stub-service
 
+#### Manually
+Alternatively you can download and install the [pact-ruby-standalone][pact-ruby-standalone-releases] archives for your platform and install as per installation instructions written in [Pact Ruby Standalone release notes][pact-mock-service-standalone-installation].
+
+#### Add the Pod
 Add to your Test target in your Podfile
 ```
 target 'MyProjectTests' do
