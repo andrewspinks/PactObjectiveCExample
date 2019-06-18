@@ -23,7 +23,7 @@
 }
 
 - (void)testPact {
-  typedef void (^CompleteBlock)();
+    typedef void (^CompleteBlock)(void);
 
   [[[self.mockService uponReceiving:@"a request for hello"]
                       withRequestHTTPMethod:PactHTTPMethodGET path:@"/sayHello" query:nil headers:nil body: nil]
@@ -38,7 +38,7 @@
 }
 
 - (void)testWithQueryParams {
-  typedef void (^CompleteBlock)();
+    typedef void (^CompleteBlock)(void);
   
   [[[self.mockService uponReceiving:@"a request friends"]
                       withRequestHTTPMethod:PactHTTPMethodGET path:@"/friends" query: @{ @"age" : @"30", @"child" : @"Mary" } headers:nil body: nil]

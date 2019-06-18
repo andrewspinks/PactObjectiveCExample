@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "1020"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -46,7 +46,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "PATH=/opt/boxen/rbenv/shims:$PATH&#10;&quot;$SRCROOT&quot;/Pods/PactConsumerSwift/scripts/start_server.sh">
+               scriptText = "PATH=/opt/boxen/rbenv/shims:$PATH&#10;&quot;$SRCROOT&quot;/Pods/PactConsumerSwift/scripts/start_server.sh&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
